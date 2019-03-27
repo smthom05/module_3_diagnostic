@@ -1,14 +1,12 @@
 <h1>Stations</h1>
 <ul>
 <%= facade.stations.each do |station| %>
-  <li><%= station.name %></li>
+  <li>Station Name: <%= station.name %></li>
+  <li>Station Address: <%= station.address %></li>
+  <li>Station Type: <%= station.fuel_type %></li>
+  <li>Station Distance: <%= station.distance %></li>
 <% end %>
 </ul>
 
 
 <h3>Closest Stations</h3>
-  <ul>
-    <%= facade.closest_stations.each do |station| %>
-      <li><%= station.name %></li>
-    <% end %>
-</ul>
