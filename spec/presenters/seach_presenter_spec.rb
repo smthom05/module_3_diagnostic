@@ -11,8 +11,7 @@ describe 'SearchFacade' do
   describe 'instance methods' do
     it 'stations' do
       key = ENV['NREL_API_KEY']
-      location = '80206'
-      sf = SearchFacade.new(key, location)
+      sf = SearchFacade.new(key)
 
       sf.stations
     end
