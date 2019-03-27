@@ -4,3 +4,11 @@
   <li><%= station.name %></li>
 <% end %>
 </ul>
+
+
+<h3>Closest Stations</h3>
+  <ul>
+    <%= facade.closest_stations.each do |station| %>
+      <li><%= station.name %></li>
+    <% end %>
+</ul>

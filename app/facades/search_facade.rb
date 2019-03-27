@@ -12,6 +12,10 @@ class SearchFacade
     end
   end
 
+  def closest_stations
+    
+  end
+
   def service
     NrelService.new(ENV['NREL_API_KEY'])
   end
