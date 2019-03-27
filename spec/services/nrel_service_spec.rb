@@ -10,16 +10,14 @@ describe 'nrel service' do
 
   describe 'instance methods' do
     it '#stations' do
-      VCR.use_cassette('nrel_stations') do
-        key = ENV['NREL_API_KEY']
-        nrel = NrelService.new(key)
-        location = 80206
+      key = ENV['NREL_API_KEY']
+      nrel = NrelService.new(key)
+      location = 80206
 
-        result = nrel.get_stations(location)
+      result = nrel.get_stations(location)
 
-        expect(result).to be_a(Hash)
-        expect(result).to have_key('fuel_stations')
-      end
+      expect(result).to be_a(Hash)
+      expect(result).to have_key('fuel_stations')
     end
   end
 end

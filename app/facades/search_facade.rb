@@ -1,19 +1,19 @@
 class SearchFacade
-  attr_reader :key
+  attr_reader :location
 
-  def initialize(key)
-    @key = key
+  def initialize(location)
+    @location = location
   end
 
   def stations
-    response = service.get_stations(80203)
+    response = service.get_stations(@location)['fuel_stations']
     response.map do |response_data|
-      Stations.new(response_data)
+      Station.new(response_data)
     end
   end
 
   def service
-    NrelService.new(@key)
+    NrelService.new(ENV['NREL_API_KEY'])
   end
 
 end

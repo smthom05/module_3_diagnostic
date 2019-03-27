@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
   def index
     render locals: {
-      facade: SearchFacade.new(ENV['NREL_API_KEY'])
+      facade: SearchFacade.new(params[:q])
     }
   end
 
