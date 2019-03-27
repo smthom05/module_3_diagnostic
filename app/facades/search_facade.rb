@@ -6,7 +6,7 @@ class SearchFacade
   end
 
   def stations
-    response = service.get_stations
+    response = service.get_stations(80203)
     response.map do |response_data|
       Stations.new(response_data)
     end
